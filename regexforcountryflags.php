@@ -274,12 +274,13 @@ $array = array();
 foreach($dataset as $pair)
 {
 	$temp = array(
-				"CountryFlag" => preg_replace('/\s(.*)\s/','\1',preg_replace('/(.*):(.*)/','\1',$pair)), //
-				"CountryName" => preg_replace('/^\s*(.*)\s/','\1',preg_replace('/(.*):(.*)/','\2',$pair))
+				"CountryFlag" => preg_replace('/\s(.*)\s/','\1',preg_replace('/(.*):(.*)/','\1',$pair)), //Store the country flag emoji code into the array index. 
+				"CountryName" => preg_replace('/^\s*(.*)\s/','\1',preg_replace('/(.*):(.*)/','\2',$pair)) //Store the associated name of the emoji in the array index.
 	);
 	array_push($array,$temp);
 }
 
+//Code out the switch case:
 echo   	"switch (CountryName)<br>
 		{";
 
